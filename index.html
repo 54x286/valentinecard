@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valentine Board</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+</head>
+<body class="cover-bg">
+  <main class="cover">
+    <section class="heart-card">
+      <div class="heart-inner">
+        <p class="tiny">2025</p>
+        <h1>Will you be my Valentine?</h1>
+
+        <div class="checks">
+          <label><input type="checkbox" checked disabled /> Yes</label>
+          <label><input type="checkbox" disabled /> No</label>
+        </div>
+
+        <div class="fromto">
+          <div>
+            <span>From</span>
+            <input id="fromName" class="line-input" placeholder="Shaka" />
+          </div>
+          <div>
+            <span>To</span>
+            <input id="toName" class="line-input" placeholder="Yuda" />
+          </div>
+        </div>
+
+        <button class="btn" id="startBtn">Open the notebook</button>
+        <p class="hint">Tip: edit names, then continue ✍️</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+      const fromName = document.getElementById('fromName').value.trim() || 'From Me';
+      const toName = document.getElementById('toName').value.trim() || 'My Love';
+      localStorage.setItem('v_from', fromName);
+      localStorage.setItem('v_to', toName);
+      window.location.href = 'edit.html';
+    });
+  </script>
+</body>
+</html>
