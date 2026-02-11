@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Write your Valentine</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+</head>
+<body class="paper-bg">
+  <header class="topbar">
+    <div class="topbar-title">
+      <strong id="titleTo"></strong>
+      <span class="muted">Notebook draft</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn ghost" id="clearBtn">Clear</button>
+      <button class="btn" id="previewBtn">Seal in envelope</button>
+    </div>
+  </header>
+
+  <main class="notebook-wrap">
+    <section class="notebook">
+      <div class="notebook-header">
+        <h1 contenteditable="true" id="headline">A not so love letter</h1>
+        <p class="sub" id="fromLine"></p>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <h2>📝 Letter</h2>
+          <textarea id="letter" placeholder="Write your letter here..."></textarea>
+
+          <h2>🎧 Song embeds (paste iframe)</h2>
+          <p class="muted small">Paste Spotify / YouTube / SoundCloud / Apple Music embed iframe codes. One per box.</p>
+          <textarea class="embedbox" id="song1" placeholder='Example: <iframe src="..."></iframe>'></textarea>
+          <textarea class="embedbox" id="song2" placeholder='Second song embed (optional)'></textarea>
+          <textarea class="embedbox" id="song3" placeholder='Third song embed (optional)'></textarea>
+
+          <h2>🎬 Movie / video embed</h2>
+          <textarea class="embedbox" id="movieEmbed" placeholder='Paste a trailer embed iframe (optional)'></textarea>
+        </div>
+
+        <div class="panel">
+          <h2>🖼️ Photos (upload)</h2>
+          <input type="file" id="photosInput" accept="image/*" multiple />
+          <div class="photo-grid" id="photoGrid"></div>
+          <p class="muted small">Best: 1–4 photos. People can screenshot after preview.</p>
+
+          <h2>💬 Small notes</h2>
+          <input class="textline" id="noteA" placeholder="Note 1 (short)" />
+          <input class="textline" id="noteB" placeholder="Note 2 (short)" />
+          <input class="textline" id="noteC" placeholder="Note 3 (short)" />
+
+          <div class="mini-tip">
+            <strong>Screenshot tip</strong>
+            <p class="muted small">When you reach the envelope page, tap to open, then screenshot the letter layout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    initEditor();
+  </script>
+</body>
+</html>
