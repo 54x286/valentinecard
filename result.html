@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sealed</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&family=Reenie+Beanie&display=swap" rel="stylesheet">
+</head>
+<body class="paper-bg">
+  <main class="result-wrap">
+    <section class="envelope-stage">
+      <h1 class="center" id="resultTitle"></h1>
+      <p class="center muted">Tap the envelope to open. Then screenshot 🤍</p>
+
+      <div class="envelope" id="env">
+        <div class="env-back"></div>
+        <div class="env-letter" id="letterCard">
+          <div class="letter-top">
+            <h2 id="letterHeadline"></h2>
+            <p class="muted small" id="letterMeta"></p>
+          </div>
+
+          <div class="letter-body">
+            <div class="letter-text" id="letterText"></div>
+
+            <div class="sticker-row" id="notesRow"></div>
+
+            <div class="media-block">
+              <h3>🎧 Songs</h3>
+              <div class="embed-grid" id="songsOut"></div>
+            </div>
+
+            <div class="media-block">
+              <h3>🎬 Movie</h3>
+              <div id="movieOut"></div>
+            </div>
+
+            <div class="media-block">
+              <h3>🖼️ Photos</h3>
+              <div class="polaroids" id="photosOut"></div>
+            </div>
+          </div>
+
+          <div class="letter-footer">
+            <span class="muted small">Made to be screenshot, not saved on a server.</span>
+            <button class="btn ghost" onclick="window.location.href='edit.html'">Edit</button>
+          </div>
+        </div>
+
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    initResult();
+  </script>
+</body>
+</html>
